@@ -1,0 +1,46 @@
+table gold_dim_fx
+	lineageTag: 817e36c8-d388-4fab-afd8-b8f122d1f32e
+	sourceLineageTag: [dbo].[gold_dim_fx]
+
+	column fx_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: a7745bcf-4797-4c65-8ec8-8286c08dd9ca
+		sourceLineageTag: fx_date
+		summarizeBy: none
+		sourceColumn: fx_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENCY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f9a5fbaa-c13a-4313-9512-a97ee7c76789
+		sourceLineageTag: CURRENCY
+		summarizeBy: none
+		sourceColumn: CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column exchange_rate_to_eur
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 991ea312-c40a-4491-be28-4b98073af8da
+		sourceLineageTag: exchange_rate_to_eur
+		summarizeBy: sum
+		sourceColumn: exchange_rate_to_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_dim_fx = entity
+		mode: directLake
+		source
+			entityName: gold_dim_fx
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

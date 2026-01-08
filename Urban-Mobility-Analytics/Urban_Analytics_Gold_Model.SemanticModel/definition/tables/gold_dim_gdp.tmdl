@@ -1,0 +1,76 @@
+table gold_dim_gdp
+	lineageTag: 6c85efcc-ad3a-4970-ad73-1a871b4afe31
+	sourceLineageTag: [dbo].[gold_dim_gdp]
+
+	column country_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7a599c13-b889-456e-8d9b-02543689a0e4
+		sourceLineageTag: country_name
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column countryiso3code
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 17cd902c-5724-42b7-92cc-233d3f5b77aa
+		sourceLineageTag: countryiso3code
+		summarizeBy: none
+		sourceColumn: countryiso3code
+
+		annotation SummarizationSetBy = Automatic
+
+	column indicator_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f17c87af-08d8-453d-a999-752a5b7b9226
+		sourceLineageTag: indicator_name
+		summarizeBy: none
+		sourceColumn: indicator_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column gdp_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8b074ca3-6670-4341-8bca-4069408ac8e5
+		sourceLineageTag: gdp_year
+		summarizeBy: sum
+		sourceColumn: gdp_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column gdp_value
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b9d8ae8c-b7fe-4bb1-b1e2-02cc207cf9f7
+		sourceLineageTag: gdp_value
+		summarizeBy: sum
+		sourceColumn: gdp_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column obs_status
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 469de277-29c7-49ab-bf23-cfc3e680b4bf
+		sourceLineageTag: obs_status
+		summarizeBy: none
+		sourceColumn: obs_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_gdp = entity
+		mode: directLake
+		source
+			entityName: gold_dim_gdp
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

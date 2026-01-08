@@ -1,0 +1,77 @@
+table gold_fact_taxi_daily
+	lineageTag: 9b7cd1b3-c765-4326-a90c-9a8071d2f762
+	sourceLineageTag: [dbo].[gold_fact_taxi_daily]
+
+	measure 'Avg Fare' = DIVIDE(SUM(gold_fact_taxi_daily[daily_revenue_usd]), SUM(gold_fact_taxi_daily[total_trips]))
+		lineageTag: 6daa4933-a256-4f21-8bd4-4ff02766d59e
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pickup_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: aeef40fe-f8a3-4740-8b3e-d59c11fd723a
+		sourceLineageTag: pickup_date
+		summarizeBy: none
+		sourceColumn: pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column pickup_zone_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8fff6aa1-2b27-4eb8-8342-5a93f1aa6c7a
+		sourceLineageTag: pickup_zone_id
+		summarizeBy: none
+		sourceColumn: pickup_zone_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_trips
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 953cc902-704b-488d-ae61-4fecaaba2d20
+		sourceLineageTag: total_trips
+		summarizeBy: sum
+		sourceColumn: total_trips
+
+		annotation SummarizationSetBy = Automatic
+
+	column daily_revenue_usd
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 64c69f7d-6ee5-4e50-a505-83959e539018
+		sourceLineageTag: daily_revenue_usd
+		summarizeBy: sum
+		sourceColumn: daily_revenue_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_trip_distance
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 104583eb-a2d1-47cc-bb1f-b26a561eadb2
+		sourceLineageTag: avg_trip_distance
+		summarizeBy: sum
+		sourceColumn: avg_trip_distance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_fact_taxi_daily = entity
+		mode: directLake
+		source
+			entityName: gold_fact_taxi_daily
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

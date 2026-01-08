@@ -1,0 +1,67 @@
+table gold_dim_date
+	lineageTag: d50d4854-d550-4b4c-a419-c348d6fbbf93
+	sourceLineageTag: [dbo].[gold_dim_date]
+
+	column date_key
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 2c7c1f99-dc3c-4bdc-9418-ce19371518b0
+		sourceLineageTag: date_key
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 3a44359e-9adc-4fa3-ba7e-42df6439669d
+		sourceLineageTag: year
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4aeca0d9-da98-44b7-a59e-99b11487c281
+		sourceLineageTag: month
+		summarizeBy: sum
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c31dd6fc-3045-4b68-90f5-0c676389bef8
+		sourceLineageTag: day_name
+		summarizeBy: none
+		sourceColumn: day_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a10948d6-b5ca-459f-978a-db00577846f3
+		sourceLineageTag: is_weekend
+		summarizeBy: sum
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_date = entity
+		mode: directLake
+		source
+			entityName: gold_dim_date
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,142 @@
+table gold_fact_aq_daily
+	lineageTag: eb48dd83-17a9-4b15-a3b1-38e51c07a3f3
+	sourceLineageTag: [dbo].[gold_fact_aq_daily]
+
+	column reading_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9f330624-e24e-4431-be6f-4aa3080f2945
+		sourceLineageTag: reading_date
+		summarizeBy: none
+		sourceColumn: reading_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 47fca036-822a-4e55-b31c-652fdc8b210a
+		sourceLineageTag: location_name
+		summarizeBy: none
+		sourceColumn: location_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column lat
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 61959d0e-39b2-41fa-b08a-31da8a6a547c
+		sourceLineageTag: lat
+		summarizeBy: sum
+		sourceColumn: lat
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lon
+		dataType: double
+		sourceProviderType: float
+		lineageTag: d66743dd-9e56-4f37-a94a-e2dcdea5e0cf
+		sourceLineageTag: lon
+		summarizeBy: sum
+		sourceColumn: lon
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_pm25
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 448633a0-f125-481d-92e6-f14a1e1b3d2a
+		sourceLineageTag: avg_pm25
+		summarizeBy: sum
+		sourceColumn: avg_pm25
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_no2
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 4a61dfa0-fe26-4a7f-beee-f7f868ad6728
+		sourceLineageTag: avg_no2
+		summarizeBy: sum
+		sourceColumn: avg_no2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_o3
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 5c157498-cfe8-4ba0-81e2-187b7f50b071
+		sourceLineageTag: avg_o3
+		summarizeBy: sum
+		sourceColumn: avg_o3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_co
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 31feff45-dca6-49bd-bf85-01f57af6004d
+		sourceLineageTag: avg_co
+		summarizeBy: sum
+		sourceColumn: avg_co
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_so2
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 3f11b8bc-2489-40cb-9bdb-4f8b6cf5397e
+		sourceLineageTag: avg_so2
+		summarizeBy: sum
+		sourceColumn: avg_so2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_pm10
+		dataType: double
+		sourceProviderType: float
+		lineageTag: f9b2b2a4-ac61-4880-b316-9c0c191ea448
+		sourceLineageTag: avg_pm10
+		summarizeBy: sum
+		sourceColumn: avg_pm10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_temp
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 2dfc7171-66c9-4e67-8abb-dadf94c25d02
+		sourceLineageTag: avg_temp
+		summarizeBy: sum
+		sourceColumn: avg_temp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_fact_aq_daily = entity
+		mode: directLake
+		source
+			entityName: gold_fact_aq_daily
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

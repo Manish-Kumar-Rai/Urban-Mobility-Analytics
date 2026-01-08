@@ -1,0 +1,54 @@
+table gold_dim_zone
+	lineageTag: 7996ec69-9d32-4f18-807a-ebc67da5ecd2
+	sourceLineageTag: [dbo].[gold_dim_zone]
+
+	column location_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1f9f4292-3b9e-41cc-a02c-6af2cc7a04b6
+		sourceLineageTag: location_id
+		summarizeBy: none
+		sourceColumn: location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column borough
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b88a0bfa-d17b-4735-bf2e-20a2768195cd
+		sourceLineageTag: borough
+		summarizeBy: none
+		sourceColumn: borough
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a18926a6-3e69-418c-b8b2-89d25f8ed9c9
+		sourceLineageTag: zone_name
+		summarizeBy: none
+		sourceColumn: zone_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_zone
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f4c8b323-570b-463b-9f0c-38b15f437af8
+		sourceLineageTag: service_zone
+		summarizeBy: none
+		sourceColumn: service_zone
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_zone = entity
+		mode: directLake
+		source
+			entityName: gold_dim_zone
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

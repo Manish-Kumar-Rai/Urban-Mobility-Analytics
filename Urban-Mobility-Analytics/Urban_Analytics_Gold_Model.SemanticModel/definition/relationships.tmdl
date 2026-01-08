@@ -1,0 +1,16 @@
+relationship 96b8fa7e-ce74-6749-538a-132cefde7190
+	fromColumn: gold_fact_aq_daily.reading_date
+	toColumn: gold_dim_date.date_key
+
+relationship 5e40432f-88ac-4025-5dfd-702986f09da5
+	fromColumn: gold_fact_taxi_daily.pickup_date
+	toColumn: gold_dim_date.date_key
+
+relationship 7f05ffee-aed2-7c7a-8a68-9c429c0dc079
+	fromColumn: gold_dim_fx.fx_date
+	toColumn: gold_dim_date.date_key
+
+relationship 2cbe3867-c9cc-0227-78b9-0a14866d7386
+	fromColumn: gold_fact_taxi_daily.pickup_zone_id
+	toColumn: gold_dim_zone.location_id
+

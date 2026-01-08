@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Urban_Analytics_Gold_Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "553d7be8-1d43-84d4-446f-15d267940bc1"
+  }
+}
