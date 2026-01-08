@@ -4,12 +4,14 @@ table gold_dim_fx
 
 	column fx_date
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: a7745bcf-4797-4c65-8ec8-8286c08dd9ca
 		sourceLineageTag: fx_date
 		summarizeBy: none
 		sourceColumn: fx_date
+
+		changedProperty = FormatString
 
 		annotation SummarizationSetBy = Automatic
 

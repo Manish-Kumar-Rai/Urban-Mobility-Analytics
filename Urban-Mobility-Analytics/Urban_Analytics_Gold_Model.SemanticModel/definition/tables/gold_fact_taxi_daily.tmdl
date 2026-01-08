@@ -9,14 +9,23 @@ table gold_fact_taxi_daily
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure Revenue_EUR = SUM(gold_fact_taxi_daily[daily_revenue_usd]) * AVERAGE(gold_dim_fx[exchange_rate_to_eur])
+		lineageTag: 49d0580c-3118-4394-8983-beda9107b317
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column pickup_date
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: aeef40fe-f8a3-4740-8b3e-d59c11fd723a
 		sourceLineageTag: pickup_date
 		summarizeBy: none
 		sourceColumn: pickup_date
+
+		changedProperty = FormatString
 
 		annotation SummarizationSetBy = Automatic
 

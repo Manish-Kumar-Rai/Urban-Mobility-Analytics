@@ -4,12 +4,14 @@ table gold_dim_date
 
 	column date_key
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: 2c7c1f99-dc3c-4bdc-9418-ce19371518b0
 		sourceLineageTag: date_key
 		summarizeBy: none
 		sourceColumn: date_key
+
+		changedProperty = FormatString
 
 		annotation SummarizationSetBy = Automatic
 

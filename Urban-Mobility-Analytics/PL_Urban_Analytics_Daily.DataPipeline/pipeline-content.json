@@ -14,8 +14,83 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "bronze_nyc_ingestion",
+        "name": "bronze_layer_ingestion",
         "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "55154729-de2c-ba78-48be-66e2a019d26a",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "API_KEY": {
+              "value": "c2b1ee6a392b902125b122639531734b8b6ba5fe9b26a8d75c86b2d216dd067f",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver_layer_Transformation",
+        "dependsOn": [
+          {
+            "activity": "bronze_layer_ingestion",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "bf59103d-065c-b605-4460-a82b788a36bf",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Data_Quality_Validation",
+        "dependsOn": [
+          {
+            "activity": "Silver_layer_Transformation",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "5db8bf16-51ed-ba51-4e97-b6914f09e570",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold_layer_Transformation",
+        "dependsOn": [
+          {
+            "activity": "Data_Quality_Validation",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
       }
     ],
     "variables": {

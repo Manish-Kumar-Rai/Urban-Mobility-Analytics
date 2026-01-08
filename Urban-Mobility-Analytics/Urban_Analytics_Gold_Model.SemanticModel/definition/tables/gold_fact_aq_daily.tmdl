@@ -4,12 +4,14 @@ table gold_fact_aq_daily
 
 	column reading_date
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: 9f330624-e24e-4431-be6f-4aa3080f2945
 		sourceLineageTag: reading_date
 		summarizeBy: none
 		sourceColumn: reading_date
+
+		changedProperty = FormatString
 
 		annotation SummarizationSetBy = Automatic
 

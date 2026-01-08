@@ -182,9 +182,20 @@ print("✅ bronze_taxi_zone created.")
 
 # ## OpenAQ Ingestions:
 
+# PARAMETERS CELL ********************
+
+# Default values (will be overwritten by the Pipeline)
+API_KEY = "default_key"
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
-API_KEY = "c2b1ee6a392b902125b122639531734b8b6ba5fe9b26a8d75c86b2d216dd067f"
 NYC_BBOX = "-74.259,40.477,-73.700,40.917"
 headers = {"X-API-Key": API_KEY}
 

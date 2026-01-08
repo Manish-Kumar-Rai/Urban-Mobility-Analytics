@@ -1,0 +1,355 @@
+{
+  "config": "{\"version\":\"5.69\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY25SU12\",\"type\":2,\"version\":{\"visual\":\"2.5.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"}}},\"activeSectionIndex\":5,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "591aa2d57eb48078a544",
+      "config": "{}",
+      "name": "4995156cc8091e3d7244",
+      "parameters": "[{\"name\":\"876b0057422de23cb709\",\"boundFilter\":\"1396d9e773d84bd9bb70\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"gold_fact_aq_daily\"}},\"Property\":\"location_name\"}}},{\"name\":\"747039906b0e2daeb9e9\",\"boundFilter\":\"8a60e6b64e9710cc73a8\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"gold_fact_aq_daily\"}},\"Property\":\"reading_date\"}}}]",
+      "type": 1
+    },
+    {
+      "boundSection": "d3b19afd077e6b0006d9",
+      "config": "{}",
+      "name": "7d742b670305dbd96da6",
+      "parameters": "[{\"name\":\"f9c2d506ae1c3090eb9c\",\"boundFilter\":\"9e23f92f766812722d53\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"gold_dim_zone\"}},\"Property\":\"zone_name\"}}}]",
+      "type": 1
+    }
+  ],
+  "publicCustomVisuals": [
+    "easyTerritoryTerritoryVisualB76516E7EB374091BC4E1AF5914B1F41"
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY25SU12",
+            "path": "BaseThemes/CY25SU12.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Mobility vs. Air Quality Correlation",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "0669a5f76e6940781330",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"220487a0d5ee0a01403e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":2001,\"width\":853.956204379562,\"height\":72.87591240875912,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Mobility vs. Air Quality Correlation\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 72.88,
+          "width": 853.96,
+          "x": 14.01,
+          "y": 33.64,
+          "z": 2001.00
+        },
+        {
+          "config": "{\"name\":\"a2045784008500dda9a7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":938.978102189781,\"y\":255.06569343065692,\"z\":1000,\"width\":276.55474452554745,\"height\":71.94160583941606,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_zone.borough\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_zone\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"borough\"},\"Name\":\"gold_dim_zone.borough\",\"NativeReferenceName\":\"borough\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 71.94,
+          "width": 276.55,
+          "x": 938.98,
+          "y": 255.07,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"a2d5cbbca571dacd4580\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":201.14285714285714,\"z\":0,\"width\":805.4857142857143,\"height\":519.3142857142857,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.total_trips)\"}],\"Y2\":[{\"queryRef\":\"Sum(gold_fact_aq_daily.avg_pm25)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0},{\"Name\":\"g2\",\"Entity\":\"gold_fact_aq_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"total_trips\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_taxi_daily.total_trips)\",\"NativeReferenceName\":\"Sum of total_trips\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g2\"}},\"Property\":\"avg_pm25\"}},\"Function\":1},\"Name\":\"Sum(gold_fact_aq_daily.avg_pm25)\",\"NativeReferenceName\":\"Average of avg_pm25\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"secLogAxisScale\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignZeros\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"lineStyles\":[{\"properties\":{\"showMarker\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"markerShape\":{\"expr\":{\"Literal\":{\"Value\":\"'circle'\"}}}}}],\"seriesLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 519.31,
+          "width": 805.49,
+          "x": 0.00,
+          "y": 201.14,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"ed2bde124328083b863e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":938.978102189781,\"y\":403.6204379562044,\"z\":2000,\"width\":276.55474452554745,\"height\":78.48175182481752,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"month\"},\"Name\":\"gold_dim_date.month\",\"NativeReferenceName\":\"month\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"month\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"10L\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 78.48,
+          "width": 276.55,
+          "x": 938.98,
+          "y": 403.62,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "AQ Location Detail",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"1396d9e773d84bd9bb70\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"gold_fact_aq_daily\"}},\"Property\":\"location_name\"}},\"type\":\"Categorical\",\"howCreated\":5,\"objects\":{}},{\"name\":\"8a60e6b64e9710cc73a8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"gold_fact_aq_daily\"}},\"Property\":\"reading_date\"}},\"type\":\"Categorical\",\"howCreated\":5,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "591aa2d57eb48078a544",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"33857b511470581631c5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":0,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"36199a6587aa372b1b24\",\"layouts\":[{\"id\":0,\"position\":{\"x\":128.93430656934308,\"y\":238.24817518248176,\"z\":1000,\"width\":398.014598540146,\"height\":298.04379562043795,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(gold_fact_aq_daily.avg_pm25)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_fact_aq_daily\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"avg_pm25\"}},\"Function\":1},\"Name\":\"Sum(gold_fact_aq_daily.avg_pm25)\",\"NativeReferenceName\":\"Average of avg_pm25\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"avg_pm25\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"axis\":[{\"properties\":{\"min\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"max\":{\"expr\":{\"Literal\":{\"Value\":\"55D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 298.04,
+          "width": 398.01,
+          "x": 128.93,
+          "y": 238.25,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"c94052f93394e700943b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":1001,\"width\":476.4963503649635,\"height\":72.87591240875912,\"tabOrder\":1001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"AQ Location Detail\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 72.88,
+          "width": 476.50,
+          "x": 14.01,
+          "y": 33.64,
+          "z": 1001.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Air Quality Dashboard",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "594eabdf453b5a302425",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0589e9ef079021490795\",\"layouts\":[{\"id\":0,\"position\":{\"x\":671.7664233576643,\"y\":359.7080291970803,\"z\":5000,\"width\":608.2335766423357,\"height\":347.5620437956204,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"X\":[{\"queryRef\":\"Sum(gold_fact_aq_daily.avg_pm25)\",\"active\":true}],\"Category\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}],\"Y\":[{\"queryRef\":\"Avg(gold_fact_aq_daily.avg_no2)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_fact_aq_daily\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"avg_pm25\"}},\"Function\":1},\"Name\":\"Sum(gold_fact_aq_daily.avg_pm25)\",\"NativeReferenceName\":\"Average of avg_pm25\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"avg_no2\"}},\"Function\":1},\"Name\":\"Avg(gold_fact_aq_daily.avg_no2)\",\"NativeReferenceName\":\"Average of avg_no2\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 347.56,
+          "width": 608.23,
+          "x": 671.77,
+          "y": 359.71,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"071edec03027e1a01b5c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":862.3649635036496,\"y\":244.78832116788323,\"z\":3000,\"width\":406.42335766423355,\"height\":103.7080291970803,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"syncGroup\":{\"groupName\":\"date_key\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-08-20T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-08-20T00:00:00'\"}}}}}]}}}}],\"dateRange\":[{\"properties\":{\"includeToday\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 103.71,
+          "width": 406.42,
+          "x": 862.36,
+          "y": 244.79,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"1d209aaf0c767b572ad8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":15.883211678832117,\"y\":244.78832116788323,\"z\":2000,\"width\":271.88321167883214,\"height\":74.74452554744525,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_fact_aq_daily.location_name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_fact_aq_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"location_name\"},\"Name\":\"gold_fact_aq_daily.location_name\",\"NativeReferenceName\":\"location_name\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 74.74,
+          "width": 271.88,
+          "x": 15.88,
+          "y": 244.79,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"5b64be9405c600402dde\",\"layouts\":[{\"id\":0,\"position\":{\"x\":794.1605839416059,\"y\":76.61313868613139,\"z\":0,\"width\":232.64233576642334,\"height\":151.35766423357666,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(gold_fact_aq_daily.avg_pm25)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_fact_aq_daily\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"avg_pm25\"}},\"Function\":1},\"Name\":\"Sum(gold_fact_aq_daily.avg_pm25)\",\"NativeReferenceName\":\"Average of avg_pm25\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"avg_pm25\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 151.36,
+          "width": 232.64,
+          "x": 794.16,
+          "y": 76.61,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"5c5ca01e04e52895b8e8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.343065693430656,\"y\":359.7080291970803,\"z\":4000,\"width\":644.6715328467153,\"height\":349.43065693430657,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_fact_aq_daily.avg_pm25)\"}],\"Y2\":[{\"queryRef\":\"Sum(gold_fact_aq_daily.avg_no2)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_fact_aq_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"avg_pm25\"}},\"Function\":1},\"Name\":\"Sum(gold_fact_aq_daily.avg_pm25)\",\"NativeReferenceName\":\"Average of avg_pm25\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"avg_no2\"}},\"Function\":1},\"Name\":\"Sum(gold_fact_aq_daily.avg_no2)\",\"NativeReferenceName\":\"Average of avg_no2\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"lineStyles\":[{\"properties\":{\"showMarker\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 349.43,
+          "width": 644.67,
+          "x": 9.34,
+          "y": 359.71,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"9f8ab3eaa155e18ceb03\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1026.802919708029,\"y\":59.7956204379562,\"z\":1000,\"width\":235.44525547445255,\"height\":184.992700729927,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(gold_fact_aq_daily.avg_no2)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_fact_aq_daily\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"avg_no2\"}},\"Function\":1},\"Name\":\"Sum(gold_fact_aq_daily.avg_no2)\",\"NativeReferenceName\":\"Average of avg_no2\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"avg_no2\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 184.99,
+          "width": 235.45,
+          "x": 1026.80,
+          "y": 59.80,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"a39033707597a59d0494\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":5001,\"width\":556.8467153284671,\"height\":72.87591240875912,\"tabOrder\":5001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Air Quality Dashboard\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 72.88,
+          "width": 556.85,
+          "x": 14.01,
+          "y": 33.64,
+          "z": 5001.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Economic Impact Dashboard",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "65729d6f268bd454c665",
+      "ordinal": 5,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2bac17868901ad4e0b51\",\"layouts\":[{\"id\":0,\"position\":{\"x\":15.883211678832117,\"y\":390.54014598540147,\"z\":1,\"width\":554.978102189781,\"height\":296.17518248175185,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"X\":[{\"queryRef\":\"Sum(gold_dim_gdp.gdp_value)\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.total_trips)\"}],\"Category\":[{\"queryRef\":\"gold_dim_date.year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_gdp\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0},{\"Name\":\"g2\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"gdp_value\"}},\"Function\":0},\"Name\":\"Sum(gold_dim_gdp.gdp_value)\",\"NativeReferenceName\":\"Sum of gdp_value\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"total_trips\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_taxi_daily.total_trips)\",\"NativeReferenceName\":\"Sum of total_trips\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g2\"}},\"Property\":\"year\"},\"Name\":\"gold_dim_date.year\",\"NativeReferenceName\":\"year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"trend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Trend line 2'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 296.18,
+          "width": 554.98,
+          "x": 15.88,
+          "y": 390.54,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"2d2512403d9c80dac4c5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":707.2700729927008,\"y\":390.54014598540147,\"z\":0,\"width\":554.978102189781,\"height\":314.86131386861314,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"stackedAreaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.daily_revenue_usd)\"},{\"queryRef\":\"gold_fact_taxi_daily.Revenue_EUR\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"daily_revenue_usd\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_taxi_daily.daily_revenue_usd)\",\"NativeReferenceName\":\"Sum of daily_revenue_usd\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"Revenue_EUR\"},\"Name\":\"gold_fact_taxi_daily.Revenue_EUR\",\"NativeReferenceName\":\"Revenue_EUR\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1E9F58'\"}}}}}},\"selector\":{\"metadata\":\"Sum(gold_fact_taxi_daily.daily_revenue_usd)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.2}}}}}},\"selector\":{\"metadata\":\"gold_fact_taxi_daily.Revenue_EUR\"}}]}}}",
+          "filters": "[]",
+          "height": 314.86,
+          "width": 554.98,
+          "x": 707.27,
+          "y": 390.54,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"3c85eb7972eda173b749\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":2,\"width\":724.0875912408759,\"height\":72.87591240875912,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Economic Impact Dashboard\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 72.88,
+          "width": 724.09,
+          "x": 14.01,
+          "y": 33.64,
+          "z": 2.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Zone Detail",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"9e23f92f766812722d53\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"gold_dim_zone\"}},\"Property\":\"zone_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_zone\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"zone_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Upper East Side South'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "d3b19afd077e6b0006d9",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"5b5063609442ea591b00\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":2001,\"width\":292.4379562043796,\"height\":72.87591240875912,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Zone Detail\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 72.88,
+          "width": 292.44,
+          "x": 14.01,
+          "y": 33.64,
+          "z": 2001.00
+        },
+        {
+          "config": "{\"name\":\"85a27c287a94d256e897\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":0,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"955d5a58789ca1b144cc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":120.52554744525547,\"y\":143.8832116788321,\"z\":1000,\"width\":225.16788321167883,\"height\":151.35766423357666,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.total_trips)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"total_trips\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_taxi_daily.total_trips)\",\"NativeReferenceName\":\"Sum of total_trips\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"total_trips\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 151.36,
+          "width": 225.17,
+          "x": 120.53,
+          "y": 143.88,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"c16f109e2ed62a229cb4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":602.5142857142857,\"y\":26.514285714285716,\"z\":2000,\"width\":518.4,\"height\":635.4285714285714,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_fact_taxi_daily.pickup_date\"},{\"queryRef\":\"Sum(gold_fact_taxi_daily.daily_revenue_usd)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"pickup_date\"},\"Name\":\"gold_fact_taxi_daily.pickup_date\",\"NativeReferenceName\":\"pickup_date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"daily_revenue_usd\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_taxi_daily.daily_revenue_usd)\",\"NativeReferenceName\":\"Sum of daily_revenue_usd\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 635.43,
+          "width": 518.40,
+          "x": 602.51,
+          "y": 26.51,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Mobility Dashboard",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ff0f4494401ca8a98e16",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"007ec0c7de987d435c17\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":434.2857142857143,\"z\":2000,\"width\":821.0285714285715,\"height\":278.85714285714283,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gold_dim_zone.zone_name\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.total_trips)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_zone\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"zone_name\"},\"Name\":\"gold_dim_zone.zone_name\",\"NativeReferenceName\":\"zone_name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"total_trips\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_taxi_daily.total_trips)\",\"NativeReferenceName\":\"Sum of total_trips\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"total_trips\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"gold_fact_taxi_daily\"}},\"Property\":\"daily_revenue_usd\"}},\"Function\":0}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'minColor'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'maxColor'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}]}}}",
+          "filters": "[]",
+          "height": 278.86,
+          "width": 821.03,
+          "x": 0.00,
+          "y": 434.29,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"22a62375b1b08aa50b22\",\"layouts\":[{\"id\":0,\"position\":{\"x\":862.1714285714286,\"y\":383.0857142857143,\"z\":3000,\"width\":406.85714285714283,\"height\":160,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"syncGroup\":{\"groupName\":\"date_key\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-08-20T01:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-08-20T00:00:00'\"}}}}}]}}}}],\"dateRange\":[{\"properties\":{\"includeToday\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 160.00,
+          "width": 406.86,
+          "x": 862.17,
+          "y": 383.09,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"55032e5883702c8590ad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":4001,\"width\":496.11678832116786,\"height\":79.41605839416059,\"tabOrder\":4001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Mobility Dashboard\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 79.42,
+          "width": 496.12,
+          "x": 14.01,
+          "y": 33.64,
+          "z": 4001.00
+        },
+        {
+          "config": "{\"name\":\"79da2310d0485704093e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":941.7142857142857,\"y\":574.1714285714286,\"z\":4000,\"width\":247.77142857142857,\"height\":106.97142857142858,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.is_weekend\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"is_weekend\"},\"Name\":\"gold_dim_date.is_weekend\",\"NativeReferenceName\":\"is_weekend\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 106.97,
+          "width": 247.77,
+          "x": 941.71,
+          "y": 574.17,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"ed3e0f516e04605aeac1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":135.31428571428572,\"z\":0,\"width\":821.0285714285715,\"height\":279.77142857142854,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.total_trips)\"}],\"Tooltips\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.avg_trip_distance)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"total_trips\"}},\"Function\":1},\"Name\":\"Sum(gold_fact_taxi_daily.total_trips)\",\"NativeReferenceName\":\"Average of total_trips\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"avg_trip_distance\"}},\"Function\":1},\"Name\":\"Sum(gold_fact_taxi_daily.avg_trip_distance)\",\"NativeReferenceName\":\"Average of avg_trip_distance\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 279.77,
+          "width": 821.03,
+          "x": 0.00,
+          "y": 135.31,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"f62ce73ace0462d75b24\",\"layouts\":[{\"id\":0,\"position\":{\"x\":862.1714285714286,\"y\":103.31428571428572,\"z\":1000,\"width\":406.85714285714283,\"height\":279.77142857142854,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"gold_fact_taxi_daily.Avg Fare\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"Avg Fare\"},\"Name\":\"gold_fact_taxi_daily.Avg Fare\",\"NativeReferenceName\":\"Avg Fare\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"Avg Fare\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 279.77,
+          "width": 406.86,
+          "x": 862.17,
+          "y": 103.31,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
