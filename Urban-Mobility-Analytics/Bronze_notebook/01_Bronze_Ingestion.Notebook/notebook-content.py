@@ -20,8 +20,13 @@
 # META   }
 # META }
 
+# MARKDOWN ********************
+
+# # Raw Data
+
 # CELL ********************
 
+# Installing Library
 !pip install openaq
 
 # METADATA ********************
@@ -71,7 +76,7 @@ temp_path = "Files/_temp_download"
 
 # --- CONFIGURATION ---
 taxi_types = ["yellow", "green"]
-years = ["2025"]
+years = [str(i) for i in range(2020,2026)]
 months = [f"{i:02d}" for i in range(1, 13)]
 current_year = datetime.now().year
 current_month = datetime.now().month
@@ -149,6 +154,22 @@ print("="*30)
 
 # CELL ********************
 
+df = spark.read.table("bronze_green_taxi")
+df.count()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# MARKDOWN ********************
+
+# ## Taxi Zone:
+
+# CELL ********************
+
 zone_lookup_url = "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv"
 mssparkutils.fs.cp(zone_lookup_url, "Files/bronze/static/taxi_zone_lookup.csv")
 
@@ -184,8 +205,8 @@ print("✅ bronze_taxi_zone created.")
 
 # PARAMETERS CELL ********************
 
-# Default values (will be overwritten by the Pipeline)
-API_KEY = "default_key"
+
+API_KEY = "c359c43896d505d4fba78a0edf200d32e76ea9c812cc30b70f6c3013089fedae"
 
 # METADATA ********************
 
@@ -227,8 +248,8 @@ for sensor in sensor_list:
     meas_url = f"https://api.openaq.org/v3/sensors/{sensor['id']}/days"
     # Filtering for the last year to ensure we match your Taxi data range
     params = {
-        "date_from": (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d"),
-        "limit": 500 
+        "date_from": (datetime.now() - timedelta(days=1825)).strftime("%Y-%m-%d"),
+        "limit": 1000 
     }
     
     try:
@@ -274,7 +295,6 @@ if all_measurements:
 
 # CELL ********************
 
-# --- 1. Ingest GDP (World Bank) ---
 print("🚀 Ingesting GDP Data...")
 gdp_url = "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?format=json"
 response_gdp = requests.get(gdp_url).json()

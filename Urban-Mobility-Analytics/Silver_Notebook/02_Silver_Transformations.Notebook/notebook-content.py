@@ -22,7 +22,7 @@
 
 # CELL ********************
 
-from pyspark.sql.functions import col, coalesce, to_date, current_timestamp, avg, last
+from pyspark.sql.functions import col, coalesce, to_date, current_timestamp, avg, last, lit
 from pyspark.sql import Window
 
 # METADATA ********************
@@ -38,25 +38,114 @@ from pyspark.sql import Window
 
 # CELL ********************
 
-df_bronze_taxi = spark.read.table("bronze_nyc_taxi")
+# 1. Load the two separate tables
+df_yellow = spark.read.table("bronze_yellow_taxi").withColumn("taxi_type", lit("yellow"))
+df_green = spark.read.table("bronze_green_taxi").withColumn("taxi_type", lit("green"))
 
-silver_taxi = df_bronze_taxi.select(
+# 2. Union them safely using unionByName
+# The allowMissingColumns=True is crucial because Green has 'ehail_fee' 
+# and Yellow has 'airport_fee'
+df_bronze_combined = df_yellow.unionByName(df_green, allowMissingColumns=True)
+
+# 3. Apply your Silver transformations
+# Note: I've updated the pickup/dropoff logic to match your bronze column names
+silver_taxi = df_bronze_combined.select(
     col("VendorID"),
     col("taxi_type"),
-    # Unify the pickup/dropoff columns
-    coalesce(col("tpep_pickup_datetime"), col("lpep_pickup_datetime")).alias("pickup_datetime"),
-    coalesce(col("tpep_dropoff_datetime"), col("lpep_dropoff_datetime")).alias("dropoff_datetime"),
+    
+    # Coalesce the specific pickup/dropoff columns
+    coalesce(
+        col("tpep_pickup_datetime"), 
+        col("lpep_pickup_datetime")
+    ).alias("pickup_datetime"),
+    
+    coalesce(
+        col("tpep_dropoff_datetime"), 
+        col("lpep_dropoff_datetime")
+    ).alias("dropoff_datetime"),
+    
+    # Cast passenger_count to int (it came in as double/long in Bronze)
     col("passenger_count").cast("int"),
     col("trip_distance").cast("double"),
+    
+    # Standardizing Location IDs
     col("PULocationID").alias("pickup_zone_id"),
     col("DOLocationID").alias("dropoff_zone_id"),
+    
+    # Financials
     col("fare_amount"),
     col("total_amount"),
-    col("ingestion_timestamp").alias("bronze_ingestion_time"),
+    
+    # Timing (if you added ingestion_timestamp in bronze, keep it, 
+    # otherwise lit(None) or just remove it)
     current_timestamp().alias("silver_processing_time")
-).filter("trip_distance > 0 AND total_amount > 0") # Basic quality check
+).filter("trip_distance > 0 AND total_amount > 0")
 
-silver_taxi.write.format("delta").mode("overwrite").saveAsTable("silver_nyc_taxi")
+# 4. Write the final Silver Table
+silver_taxi.write.format("delta") \
+    .mode("overwrite") \
+    .option("overwriteSchema", "true") \
+    .saveAsTable("silver_nyc_taxi")
+
+print("Silver layer successfully created from unified Bronze tables.")
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+from pyspark.sql import functions as F
+
+# 1. Load the green taxi bronze table
+df_green = spark.read.table("bronze_green_taxi")
+
+# 2. Apply Silver transformations
+silver_green_taxi = (
+    df_green
+    .select(
+        F.col("VendorID"),
+        # Standardizing names for easier downstream use
+        F.col("lpep_pickup_datetime").alias("pickup_datetime"),
+        F.col("lpep_dropoff_datetime").alias("dropoff_datetime"),
+        F.col("PULocationID").alias("pickup_location_id"),
+        F.col("DOLocationID").alias("dropoff_location_id"),
+        
+        # Casting types
+        F.col("passenger_count").cast("int"),
+        F.col("trip_distance").cast("double"),
+        F.col("fare_amount").cast("double"),
+        F.col("total_amount").cast("double"),
+        F.col("payment_type").cast("int"),
+        F.col("trip_type").cast("int"),
+        F.col("RatecodeID").cast("int"),
+        
+        # Metadata
+        F.lit("green").alias("taxi_type"),
+        F.current_timestamp().alias("silver_processing_time")
+    )
+    # 3. Add Calculated Field: Trip Duration in Minutes
+    .withColumn("trip_duration_minutes", 
+                (F.unix_timestamp("dropoff_datetime") - F.unix_timestamp("pickup_datetime")) / 60)
+    
+    # 4. Data Quality Filters
+    .filter(
+        (F.col("trip_distance") > 0) & 
+        (F.col("total_amount") > 0) &
+        (F.col("pickup_datetime") < F.col("dropoff_datetime")) # Ensure time flows forward
+    )
+)
+
+# 5. Write to Silver Delta Table
+silver_green_taxi.write.format("delta") \
+    .mode("overwrite") \
+    .option("overwriteSchema", "true") \
+    .saveAsTable("silver_nyc_taxi")
+
+print("Silver Green Taxi table successfully created.")
 
 # METADATA ********************
 

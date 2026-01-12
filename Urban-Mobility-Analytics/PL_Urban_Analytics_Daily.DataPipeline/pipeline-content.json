@@ -91,6 +91,96 @@
             ]
           }
         ]
+      },
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "<p>@{pipeline().Pipeline} run successfully</p>",
+          "to": "manishkumarrai3389@gmail.com",
+          "subject": "On Pipeline Success"
+        },
+        "externalReferences": {
+          "connection": "9a0f32eb-9f9b-431c-b38d-37ec6528d6a9"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Office365EmailSuccess",
+        "description": "On Success",
+        "dependsOn": [
+          {
+            "activity": "Gold_layer_Transformation",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "<p>@{pipeline().Pipeline} Failed</p>",
+          "to": "manishkumarrai3389@gmail.com",
+          "subject": "On Pipeline Failure"
+        },
+        "externalReferences": {
+          "connection": "9a0f32eb-9f9b-431c-b38d-37ec6528d6a9"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Office365EmailFailure",
+        "description": "On Failure",
+        "dependsOn": [
+          {
+            "activity": "Pipeline Fail",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Fail",
+        "typeProperties": {
+          "message": "Pipeline Fail",
+          "errorCode": "404"
+        },
+        "name": "Pipeline Fail",
+        "dependsOn": [
+          {
+            "activity": "Gold_layer_Transformation",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          },
+          {
+            "activity": "Data_Quality_Validation",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          },
+          {
+            "activity": "Silver_layer_Transformation",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          },
+          {
+            "activity": "bronze_layer_ingestion",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
       }
     ],
     "variables": {
