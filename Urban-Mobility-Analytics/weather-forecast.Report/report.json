@@ -1,0 +1,87 @@
+{
+  "config": "{\"version\":\"5.69\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY25SU12\",\"type\":2,\"version\":{\"visual\":\"2.5.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"}}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY25SU12",
+            "path": "BaseThemes/CY25SU12.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"50D\"}}}}}]}}",
+      "displayName": "Weather Dashboard",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "7ff94cd360405bb14906",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1dbf6e2ad100a3200d0b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":795.0583390528484,\"y\":261.79821551132466,\"z\":4000,\"width\":209.96568291008924,\"height\":186.24571036376116,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"Y\":[{\"queryRef\":\"gold_weather_forecast.Latest Humidity\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_weather_forecast\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"Latest Humidity\"},\"Name\":\"gold_weather_forecast.Latest Humidity\",\"NativeReferenceName\":\"Latest Humidity\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"Latest Humidity\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"axis\":[{\"properties\":{\"min\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"max\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FF5B0F'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 186.25,
+          "width": 209.97,
+          "x": 795.06,
+          "y": 261.80,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"57350ba92160c3048577\",\"layouts\":[{\"id\":0,\"position\":{\"x\":870.6108442004119,\"y\":483.18462594372,\"z\":4001,\"width\":285.5181880576527,\"height\":173.06794783802334,\"tabOrder\":4001}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"gold_weather_forecast.Latest Condition\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_weather_forecast\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"Latest Condition\"},\"Name\":\"gold_weather_forecast.Latest Condition\",\"NativeReferenceName\":\"Latest Condition\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 173.07,
+          "width": 285.52,
+          "x": 870.61,
+          "y": 483.18,
+          "z": 4001.00
+        },
+        {
+          "config": "{\"name\":\"623a5f23157da072da07\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.056280027453672,\"y\":23.719972546328073,\"z\":0,\"width\":754.6465339739191,\"height\":231.05010295126976,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gold_weather_forecast.forecast_time\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_weather_forecast.temperature)\"},{\"queryRef\":\"Sum(gold_weather_forecast.feels_like)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_weather_forecast\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"forecast_time\"},\"Name\":\"gold_weather_forecast.forecast_time\",\"NativeReferenceName\":\"forecast_time\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"temperature\"}},\"Function\":0},\"Name\":\"Sum(gold_weather_forecast.temperature)\",\"NativeReferenceName\":\"Sum of temperature\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"feels_like\"}},\"Function\":0},\"Name\":\"Sum(gold_weather_forecast.feels_like)\",\"NativeReferenceName\":\"Sum of feels_like\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"forecast_time\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"lineStyles\":[{\"properties\":{\"lineChartType\":{\"expr\":{\"Literal\":{\"Value\":\"'step'\"}}},\"areaShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"areaMatchStrokeColor\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"interpolationStep\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}},\"selector\":{\"metadata\":\"Sum(gold_weather_forecast.feels_like)\"}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.2}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"80D\"}}}},\"selector\":{\"metadata\":\"Sum(gold_weather_forecast.temperature)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":8,\"Percent\":0}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"80D\"}}}},\"selector\":{\"metadata\":\"Sum(gold_weather_forecast.feels_like)\"}}],\"valueAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Scalar'\"}}},\"maxMarginFactor\":{\"expr\":{\"Literal\":{\"Value\":\"45L\"}}},\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":-0.5}}}}},\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"preferredCategoryWidth\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 231.05,
+          "width": 754.65,
+          "x": 14.06,
+          "y": 23.72,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"9b3deb0d00c36504137a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.056280027453672,\"y\":261.79821551132466,\"z\":1000,\"width\":754.6465339739191,\"height\":212.6012354152368,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gold_weather_forecast.forecast_time\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_weather_forecast.pressure)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_weather_forecast\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"forecast_time\"},\"Name\":\"gold_weather_forecast.forecast_time\",\"NativeReferenceName\":\"forecast_time\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"pressure\"}},\"Function\":0},\"Name\":\"Sum(gold_weather_forecast.pressure)\",\"NativeReferenceName\":\"Sum of pressure\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"forecast_time\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"lineStyles\":[{\"properties\":{\"lineChartType\":{\"expr\":{\"Literal\":{\"Value\":\"'step'\"}}},\"areaShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"areaMatchStrokeColor\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"strokeTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"32D\"}}}}}],\"valueAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"logAxisScale\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"invertAxis\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000D\"}}},\"switchAxisPosition\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"categoryAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Scalar'\"}}},\"maxMarginFactor\":{\"expr\":{\"Literal\":{\"Value\":\"45L\"}}},\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":-0.5}}}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#0FFF23'\"}}}}}},\"selector\":{\"metadata\":\"Sum(gold_weather_forecast.pressure)\"}}]}}}",
+          "filters": "[]",
+          "height": 212.60,
+          "width": 754.65,
+          "x": 14.06,
+          "y": 261.80,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"def32b9a7a9e0cd8b756\",\"layouts\":[{\"id\":0,\"position\":{\"x\":795.0583390528484,\"y\":37.77625257378175,\"z\":3000,\"width\":209.96568291008924,\"height\":186.24571036376116,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"Y\":[{\"queryRef\":\"gold_weather_forecast.Latest Temperature\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_weather_forecast\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"Latest Temperature\"},\"Name\":\"gold_weather_forecast.Latest Temperature\",\"NativeReferenceName\":\"Latest Temperature\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"Latest Temperature\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"axis\":[{\"properties\":{\"min\":{\"expr\":{\"Literal\":{\"Value\":\"-10D\"}}},\"max\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FF5B0F'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 186.25,
+          "width": 209.97,
+          "x": 795.06,
+          "y": 37.78,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"fef3ba94620ca4a7ea05\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.056280027453672,\"y\":483.18462594372,\"z\":2000,\"width\":754.6465339739191,\"height\":197.66643788606729,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gold_weather_forecast.forecast_time\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_weather_forecast.pressure)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_weather_forecast\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"forecast_time\"},\"Name\":\"gold_weather_forecast.forecast_time\",\"NativeReferenceName\":\"forecast_time\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"pressure\"}},\"Function\":0},\"Name\":\"Sum(gold_weather_forecast.pressure)\",\"NativeReferenceName\":\"Sum of pressure\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"forecast_time\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"lineStyles\":[{\"properties\":{\"lineChartType\":{\"expr\":{\"Literal\":{\"Value\":\"'step'\"}}},\"areaShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"areaMatchStrokeColor\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"strokeTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"32D\"}}}}}],\"valueAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"logAxisScale\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"invertAxis\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000D\"}}},\"switchAxisPosition\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"categoryAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Scalar'\"}}},\"maxMarginFactor\":{\"expr\":{\"Literal\":{\"Value\":\"45L\"}}},\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":-0.5}}}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#0FFF23'\"}}}}}},\"selector\":{\"metadata\":\"Sum(gold_weather_forecast.pressure)\"}}]}}}",
+          "filters": "[]",
+          "height": 197.67,
+          "width": 754.65,
+          "x": 14.06,
+          "y": 483.18,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

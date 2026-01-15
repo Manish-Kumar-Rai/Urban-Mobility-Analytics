@@ -1,0 +1,141 @@
+table gold_weather_forecast
+	lineageTag: d2029cdc-2bc8-4209-ada9-58f7f01e28e6
+	sourceLineageTag: [dbo].[gold_weather_forecast]
+
+	measure 'Latest Temperature' =
+			
+			VAR LatestTime = MAX('gold_weather_forecast'[forecast_time])
+			RETURN
+			CALCULATE(
+			    SELECTEDVALUE('gold_weather_forecast'[temperature]),
+			    'gold_weather_forecast'[forecast_time] = LatestTime
+			)
+		lineageTag: dd978676-612f-4fba-8d35-5c74ac27ac98
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Latest Humidity' =
+			
+			VAR LatestTime = MAX('gold_weather_forecast'[forecast_time])
+			RETURN
+			CALCULATE(
+			    SELECTEDVALUE('gold_weather_forecast'[humidity]),
+			    'gold_weather_forecast'[forecast_time] = LatestTime
+			)
+		formatString: 0
+		lineageTag: 807c1240-1e87-48d1-ac31-7eaa72490a14
+
+		changedProperty = Name
+
+	measure 'Latest Condition' =
+			
+			VAR LatestTime = MAX('gold_weather_forecast'[forecast_time])
+			RETURN
+			CALCULATE(
+			    SELECTEDVALUE('gold_weather_forecast'[condition]),
+			    'gold_weather_forecast'[forecast_time] = LatestTime
+			)
+		lineageTag: 72bf02a4-69cf-4bad-a3a6-1ebb09c58eda
+
+		changedProperty = Name
+
+	column forecast_time
+		dataType: dateTime
+		formatString: HH:mm
+		lineageTag: 1cf93abd-506f-4883-af3f-8cbc94f31c36
+		sourceLineageTag: forecast_time
+		summarizeBy: none
+		sourceColumn: forecast_time
+		sortByColumn: ingested_at
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column temperature
+		dataType: double
+		lineageTag: b9abe509-fb40-4240-b67b-1441bed7c25d
+		sourceLineageTag: temperature
+		summarizeBy: sum
+		sourceColumn: temperature
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column feels_like
+		dataType: double
+		lineageTag: b6cec4e5-7bf1-41b3-b7ce-50e5b9648e03
+		sourceLineageTag: feels_like
+		summarizeBy: sum
+		sourceColumn: feels_like
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column humidity
+		dataType: int64
+		formatString: 0
+		lineageTag: 41cc097b-de36-44ad-a26b-f649272bca6f
+		sourceLineageTag: humidity
+		summarizeBy: sum
+		sourceColumn: humidity
+
+		annotation SummarizationSetBy = Automatic
+
+	column pressure
+		dataType: int64
+		formatString: 0
+		lineageTag: 08843a65-9805-4927-9264-52f4767b7dbd
+		sourceLineageTag: pressure
+		summarizeBy: sum
+		sourceColumn: pressure
+
+		annotation SummarizationSetBy = Automatic
+
+	column condition
+		dataType: string
+		lineageTag: f753ff10-39c9-4700-9fef-14a7a598a064
+		sourceLineageTag: condition
+		summarizeBy: none
+		sourceColumn: condition
+
+		annotation SummarizationSetBy = Automatic
+
+	column wind_speed
+		dataType: double
+		lineageTag: 644b6b18-757e-4a97-bdb8-78b37f38e302
+		sourceLineageTag: wind_speed
+		summarizeBy: sum
+		sourceColumn: wind_speed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ingested_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7cc83191-a006-476d-96ac-e4114c46209e
+		sourceLineageTag: ingested_at
+		summarizeBy: none
+		sourceColumn: ingested_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_weather_forecast = entity
+		mode: directLake
+		source
+			entityName: gold_weather_forecast
+			schemaName: dbo
+			expressionSource: 'DirectLake - UrbanLakehouse'
+

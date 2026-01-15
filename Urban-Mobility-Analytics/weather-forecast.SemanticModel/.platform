@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "weather-forecast"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4f60488a-7e20-80d0-466b-27d39f7733ed"
+  }
+}

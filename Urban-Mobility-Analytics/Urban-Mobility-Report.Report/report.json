@@ -47,16 +47,16 @@
       "ordinal": 4,
       "visualContainers": [
         {
-          "config": "{\"name\":\"220487a0d5ee0a01403e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":2001,\"width\":853.956204379562,\"height\":72.87591240875912,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Mobility vs. Air Quality Correlation\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "config": "{\"name\":\"220487a0d5ee0a01403e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":3000,\"width\":853.956204379562,\"height\":72.87591240875912,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Mobility vs. Air Quality Correlation\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
           "filters": "[]",
           "height": 72.88,
           "width": 853.96,
           "x": 14.01,
           "y": 33.64,
-          "z": 2001.00
+          "z": 3000.00
         },
         {
-          "config": "{\"name\":\"a2045784008500dda9a7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":938.978102189781,\"y\":255.06569343065692,\"z\":1000,\"width\":276.55474452554745,\"height\":71.94160583941606,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_zone.borough\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_zone\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"borough\"},\"Name\":\"gold_dim_zone.borough\",\"NativeReferenceName\":\"borough\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "config": "{\"name\":\"a2045784008500dda9a7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":938.978102189781,\"y\":255.06569343065692,\"z\":1000,\"width\":276.55474452554745,\"height\":71.94160583941606,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_zone.borough\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_zone\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"borough\"},\"Name\":\"gold_dim_zone.borough\",\"NativeReferenceName\":\"borough\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_zone\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"borough\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Brooklyn'\"}}]]}}}]}}}}]}}}",
           "filters": "[]",
           "height": 71.94,
           "width": 276.55,
@@ -74,7 +74,7 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"ed2bde124328083b863e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":938.978102189781,\"y\":403.6204379562044,\"z\":2000,\"width\":276.55474452554745,\"height\":78.48175182481752,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"month\"},\"Name\":\"gold_dim_date.month\",\"NativeReferenceName\":\"month\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"month\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"10L\"}}]]}}}]}}}}]}}}",
+          "config": "{\"name\":\"ed2bde124328083b863e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":938.978102189781,\"y\":403.6204379562044,\"z\":2000,\"width\":276.55474452554745,\"height\":78.48175182481752,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"month\"},\"Name\":\"gold_dim_date.month\",\"NativeReferenceName\":\"month\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
           "filters": "[]",
           "height": 78.48,
           "width": 276.55,
@@ -113,13 +113,22 @@
           "z": 1000.00
         },
         {
-          "config": "{\"name\":\"c94052f93394e700943b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":1001,\"width\":476.4963503649635,\"height\":72.87591240875912,\"tabOrder\":1001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"AQ Location Detail\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "config": "{\"name\":\"bc15d349ee0086cb0155\",\"layouts\":[{\"id\":0,\"position\":{\"x\":558.7371310912835,\"y\":122.99245024021964,\"z\":2001,\"width\":706.328071379547,\"height\":549.0734385724091,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Y\":[{\"queryRef\":\"gold_fact_aq_daily.lat\"}],\"X\":[{\"queryRef\":\"gold_fact_aq_daily.lon\"}],\"Size\":[{\"queryRef\":\"Sum(gold_fact_aq_daily.avg_pm25)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_fact_aq_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"lat\"},\"Name\":\"gold_fact_aq_daily.lat\",\"NativeReferenceName\":\"lat\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"lon\"},\"Name\":\"gold_fact_aq_daily.lon\",\"NativeReferenceName\":\"lon\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"avg_pm25\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_aq_daily.avg_pm25)\",\"NativeReferenceName\":\"Sum of avg_pm25\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 549.07,
+          "width": 706.33,
+          "x": 558.74,
+          "y": 122.99,
+          "z": 2001.00
+        },
+        {
+          "config": "{\"name\":\"c94052f93394e700943b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":2000,\"width\":476.4963503649635,\"height\":72.87591240875912,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"AQ Location Detail\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
           "filters": "[]",
           "height": 72.88,
           "width": 476.50,
           "x": 14.01,
           "y": 33.64,
-          "z": 1001.00
+          "z": 2000.00
         }
       ],
       "width": 1280.00
@@ -143,7 +152,7 @@
           "z": 5000.00
         },
         {
-          "config": "{\"name\":\"071edec03027e1a01b5c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":862.3649635036496,\"y\":244.78832116788323,\"z\":3000,\"width\":406.42335766423355,\"height\":103.7080291970803,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"syncGroup\":{\"groupName\":\"date_key\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-08-20T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-08-20T00:00:00'\"}}}}}]}}}}],\"dateRange\":[{\"properties\":{\"includeToday\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "config": "{\"name\":\"071edec03027e1a01b5c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":862.3649635036496,\"y\":244.78832116788323,\"z\":3000,\"width\":406.42335766423355,\"height\":103.7080291970803,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"syncGroup\":{\"groupName\":\"date_key\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2020-01-01T00:00:00'\"}}},\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2023-05-01T01:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2020-01-01T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2023-05-02T00:00:00'\"}}}}}}}]}}}}],\"dateRange\":[{\"properties\":{\"includeToday\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
           "filters": "[]",
           "height": 103.71,
           "width": 406.42,
@@ -188,13 +197,13 @@
           "z": 1000.00
         },
         {
-          "config": "{\"name\":\"a39033707597a59d0494\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":5001,\"width\":556.8467153284671,\"height\":72.87591240875912,\"tabOrder\":5001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Air Quality Dashboard\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "config": "{\"name\":\"a39033707597a59d0494\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":6000,\"width\":556.8467153284671,\"height\":72.87591240875912,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Air Quality Dashboard\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
           "filters": "[]",
           "height": 72.88,
           "width": 556.85,
           "x": 14.01,
           "y": 33.64,
-          "z": 5001.00
+          "z": 6000.00
         }
       ],
       "width": 1280.00
@@ -209,13 +218,13 @@
       "ordinal": 5,
       "visualContainers": [
         {
-          "config": "{\"name\":\"2bac17868901ad4e0b51\",\"layouts\":[{\"id\":0,\"position\":{\"x\":15.883211678832117,\"y\":390.54014598540147,\"z\":1,\"width\":554.978102189781,\"height\":296.17518248175185,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"X\":[{\"queryRef\":\"Sum(gold_dim_gdp.gdp_value)\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.total_trips)\"}],\"Category\":[{\"queryRef\":\"gold_dim_date.year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_gdp\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0},{\"Name\":\"g2\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"gdp_value\"}},\"Function\":0},\"Name\":\"Sum(gold_dim_gdp.gdp_value)\",\"NativeReferenceName\":\"Sum of gdp_value\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"total_trips\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_taxi_daily.total_trips)\",\"NativeReferenceName\":\"Sum of total_trips\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g2\"}},\"Property\":\"year\"},\"Name\":\"gold_dim_date.year\",\"NativeReferenceName\":\"year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"trend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Trend line 2'\"}}}}}]}}}",
+          "config": "{\"name\":\"2bac17868901ad4e0b51\",\"layouts\":[{\"id\":0,\"position\":{\"x\":15.883211678832117,\"y\":390.54014598540147,\"z\":1000,\"width\":554.978102189781,\"height\":296.17518248175185,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"X\":[{\"queryRef\":\"Sum(gold_dim_gdp.gdp_value)\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.total_trips)\"}],\"Category\":[{\"queryRef\":\"gold_dim_date.year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_gdp\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0},{\"Name\":\"g2\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"gdp_value\"}},\"Function\":0},\"Name\":\"Sum(gold_dim_gdp.gdp_value)\",\"NativeReferenceName\":\"Sum of gdp_value1\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"total_trips\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_taxi_daily.total_trips)\",\"NativeReferenceName\":\"Sum of total_trips1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g2\"}},\"Property\":\"year\"},\"Name\":\"gold_dim_date.year\",\"NativeReferenceName\":\"year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"trend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Trend line 2'\"}}}}}]}}}",
           "filters": "[]",
           "height": 296.18,
           "width": 554.98,
           "x": 15.88,
           "y": 390.54,
-          "z": 1.00
+          "z": 1000.00
         },
         {
           "config": "{\"name\":\"2d2512403d9c80dac4c5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":707.2700729927008,\"y\":390.54014598540147,\"z\":0,\"width\":554.978102189781,\"height\":314.86131386861314,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"stackedAreaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(gold_fact_taxi_daily.daily_revenue_usd)\"},{\"queryRef\":\"gold_fact_taxi_daily.Revenue_EUR\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0},{\"Name\":\"g1\",\"Entity\":\"gold_fact_taxi_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"daily_revenue_usd\"}},\"Function\":0},\"Name\":\"Sum(gold_fact_taxi_daily.daily_revenue_usd)\",\"NativeReferenceName\":\"Sum of daily_revenue_usd\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g1\"}},\"Property\":\"Revenue_EUR\"},\"Name\":\"gold_fact_taxi_daily.Revenue_EUR\",\"NativeReferenceName\":\"Revenue_EUR\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1E9F58'\"}}}}}},\"selector\":{\"metadata\":\"Sum(gold_fact_taxi_daily.daily_revenue_usd)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.2}}}}}},\"selector\":{\"metadata\":\"gold_fact_taxi_daily.Revenue_EUR\"}}]}}}",
@@ -227,13 +236,13 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"3c85eb7972eda173b749\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":2,\"width\":724.0875912408759,\"height\":72.87591240875912,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Economic Impact Dashboard\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "config": "{\"name\":\"3c85eb7972eda173b749\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":2000,\"width\":724.0875912408759,\"height\":72.87591240875912,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Economic Impact Dashboard\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
           "filters": "[]",
           "height": 72.88,
           "width": 724.09,
           "x": 14.01,
           "y": 33.64,
-          "z": 2.00
+          "z": 2000.00
         }
       ],
       "width": 1280.00
@@ -248,13 +257,13 @@
       "ordinal": 1,
       "visualContainers": [
         {
-          "config": "{\"name\":\"5b5063609442ea591b00\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":2001,\"width\":292.4379562043796,\"height\":72.87591240875912,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Zone Detail\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "config": "{\"name\":\"5b5063609442ea591b00\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":3000,\"width\":292.4379562043796,\"height\":72.87591240875912,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Zone Detail\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
           "filters": "[]",
           "height": 72.88,
           "width": 292.44,
           "x": 14.01,
           "y": 33.64,
-          "z": 2001.00
+          "z": 3000.00
         },
         {
           "config": "{\"name\":\"85a27c287a94d256e897\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":0,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
@@ -304,7 +313,7 @@
           "z": 2000.00
         },
         {
-          "config": "{\"name\":\"22a62375b1b08aa50b22\",\"layouts\":[{\"id\":0,\"position\":{\"x\":862.1714285714286,\"y\":383.0857142857143,\"z\":3000,\"width\":406.85714285714283,\"height\":160,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"syncGroup\":{\"groupName\":\"date_key\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-08-20T01:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-08-20T00:00:00'\"}}}}}]}}}}],\"dateRange\":[{\"properties\":{\"includeToday\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "config": "{\"name\":\"22a62375b1b08aa50b22\",\"layouts\":[{\"id\":0,\"position\":{\"x\":862.1714285714286,\"y\":383.0857142857143,\"z\":3000,\"width\":406.85714285714283,\"height\":160,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.date_key\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"},\"Name\":\"gold_dim_date.date_key\",\"NativeReferenceName\":\"date_key\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}}}]},\"syncGroup\":{\"groupName\":\"date_key\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2020-01-01T00:00:00'\"}}},\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2023-05-01T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2020-01-01T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date_key\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2023-05-02T00:00:00'\"}}}}}}}]}}}}],\"dateRange\":[{\"properties\":{\"includeToday\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
           "filters": "[]",
           "height": 160.00,
           "width": 406.86,
@@ -313,13 +322,13 @@
           "z": 3000.00
         },
         {
-          "config": "{\"name\":\"55032e5883702c8590ad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":4001,\"width\":496.11678832116786,\"height\":79.41605839416059,\"tabOrder\":4001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Mobility Dashboard\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "config": "{\"name\":\"55032e5883702c8590ad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.014598540145986,\"y\":33.63503649635037,\"z\":5000,\"width\":496.11678832116786,\"height\":79.41605839416059,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Mobility Dashboard\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
           "filters": "[]",
           "height": 79.42,
           "width": 496.12,
           "x": 14.01,
           "y": 33.64,
-          "z": 4001.00
+          "z": 5000.00
         },
         {
           "config": "{\"name\":\"79da2310d0485704093e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":941.7142857142857,\"y\":574.1714285714286,\"z\":4000,\"width\":247.77142857142857,\"height\":106.97142857142858,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"gold_dim_date.is_weekend\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gold_dim_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"is_weekend\"},\"Name\":\"gold_dim_date.is_weekend\",\"NativeReferenceName\":\"is_weekend\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
